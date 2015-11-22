@@ -1,0 +1,56 @@
+---
+title       : Terminal Velocity of Solid Particles Settling in a Fluid
+subtitle    : A Shiny App created for the Coursera course - Developing Data Products
+author      : Zach
+job         : 21 November 2015
+framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Purpose and Objective
+
+The Terminal Velocity of Solid Particles Settling in a Fluid App that was built in Shiny for the Developing Data Products Coursera class.
+
+The objective of this Slidify presentation is to allow users to better understand why there is a need for this Shiny App and to be able to use it with ease.
+
+The app can be accessed from <a href="https://zjllee.shinyapps.io/DevProject">https://zjllee.shinyapps.io/DevProject</a> and the source code is found here <a href="https://github.com/zjllee/DevProject">https://github.com/zjllee/DevProject</a>
+
+--- .class #id 
+
+## Why do you need this App? (I)
+
+A sedimentation basin for wastewater treatment can be designed to completely remove particles of terminal velocity v or larger, where:
+
+v = Q/A
+
+Q = Volumetric Flow Rate
+A = Surface Area of Sedimentation Basin
+
+For example, if the particle terminal velocity is 2 m/s and the designed volumetric flow rate through the basin is 200 $m^3$/s, then the surface area needed for the basin is:
+
+A = Q/V $m^2$
+
+<i>Start of R code calculation</i>
+```{r}
+200/2
+```
+
+--- .class #id 
+
+## Why do you need this App? (II)
+
+To evaluate the parameters Q and A of the basin that we are trying to design, we need to determine the minimun terminal velocity of the particles that we are trying to filter. Here's where the app comes in handy by calculating this terminal velocity from a set of physical parameters of the particle, fluid and acceleration due to gravity.
+
+From these parameters, we can use iterative calculations of Reynolds Number, Drag Coefficient, and velocity to determine the final terminal velocity of the particle. The App will also show users how many iterations were needed to obtain the final terminal velocity.
+
+--- .class #id
+
+## Areas for Improvement
+
+1. Improve GUI by removing submit button for instantaneous reactive output when a parameter is changed.
+2. Add option to key in inital guess of terminal velocity instead of calculating one.
+3. Add option for output to text file
